@@ -42,7 +42,7 @@ Construyo herramientas reales con machine learning, simulación y web: desde un 
 
 ## Herramientas
 
-**Lenguajes:** Python, JavaScript, TypeScript, C++, Swift, SQL
-**ML y datos:** scikit-learn, pandas, TensorFlow, Qiskit, DuckDB
-**Web y apps:** Next.js, FastAPI, Tailwind, Electron, Tauri, SwiftUI, Three.js
-**Infra:** Docker, AWS, Vercel, Supabase, GitHub Actions, Linux (Arch, Ubuntu)
+- **Lenguajes:** Python, JavaScript, TypeScript, C++, Swift, SQL
+- **ML y datos:** scikit-learn, pandas, TensorFlow, Qiskit, DuckDB
+- **Web y apps:** Next.js, FastAPI, Tailwind, Electron, Tauri, SwiftUI, Three.js
+- **Infra:** Docker, AWS, Vercel, Supabase, GitHub Actions, Linux (Arch, Ubuntu)
