@@ -132,14 +132,21 @@ SKIP_LANGS = {"HTML", "CSS", "SCSS", "Jupyter Notebook"}
 
 
 def telemetry(u):
-    w, h = 900, 300
+    """Telemetría de vuelo: datos tipo HUD, la curva de contribuciones por semana que se dibuja
+    sola y los lenguajes como planetas orbitando un núcleo (tamaño = porcentaje)."""
+    w, h = 900, 320
     repos = u["repositories"]["totalCount"]
-    stars = sum(n["stargazerCount"] for n in u["repositories"]["nodes"])
     cc = u["contributionsCollection"]
     commits = cc["totalCommitContributions"] + cc["restrictedContributionsCount"]
     contrib = cc["contributionCalendar"]["totalContributions"]
-    days = cc["contributionCalendar"]["weeks"]
-    active = sum(1 for wk in days for d in wk["contributionDays"] if d["contributionCount"] > 0)
+    weeks = cc["contributionCalendar"]["weeks"]
+    per_week = [sum(d["contributionCount"] for d in wk["contributionDays"]) for wk in weeks]
+    active = sum(1 for wk in weeks for d in wk["contributionDays"] if d["contributionCount"] > 0)
+    streak = best = 0
+    for wk in weeks:
+        for d in wk["contributionDays"]:
+            streak = streak + 1 if d["contributionCount"] else 0
+            best = max(best, streak)
 
     langs = {}
     for n in u["repositories"]["nodes"]:
@@ -150,46 +157,71 @@ def telemetry(u):
             langs.setdefault(name, [0, e["node"]["color"] or VIOLET])
             langs[name][0] += e["size"]
     total = sum(v[0] for v in langs.values()) or 1
-    top = sorted(langs.items(), key=lambda kv: -kv[1][0])[:6]
+    top = sorted(langs.items(), key=lambda kv: -kv[1][0])[:5]
 
-    del stars  # con pocas estrellas no suma; se muestran días activos
-    metrics = [("COMMITS / YEAR", commits), ("CONTRIBUTIONS", contrib), ("PUBLIC REPOS", repos), ("ACTIVE DAYS", active)]
     parts = []
-    for i, (label, value) in enumerate(metrics):
-        x, y = 40 + (i % 2) * 190, 92 + (i // 2) * 96
+    # ---- HUD de datos (izquierda)
+    hud = [
+        ("COMMITS / YR", f"{commits:,}"),
+        ("CONTRIBUTIONS", f"{contrib:,}"),
+        ("ACTIVE DAYS", f"{active}"),
+        ("BEST STREAK", f"{best} d"),
+        ("PUBLIC REPOS", f"{repos}"),
+    ]
+    for i, (label, value) in enumerate(hud):
+        y = 74 + i * 30
+        b = 0.15 + i * 0.18
         parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" values="0;1" begin="{0.2 + i * 0.25}s" dur="0.5s" fill="freeze"/>'
-            f'<text x="{x}" y="{y}" font-family="{FONT}" font-size="11" fill="{MUTED}" letter-spacing="2">{label}</text>'
-            f'<text x="{x}" y="{y + 42}" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="38" font-weight="700" fill="{TEXT}" filter="url(#glow)">{value:,}</text></g>'
+            f'<g opacity="0"><animate attributeName="opacity" values="0;1" begin="{b:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<text x="34" y="{y}" font-family="{FONT}" font-size="11" fill="{MUTED}" letter-spacing="2">{label}</text>'
+            f'<line x1="150" y1="{y - 4}" x2="230" y2="{y - 4}" stroke="{VIOLET}" stroke-opacity="0.25" stroke-dasharray="2 4"/>'
+            f'<text x="330" y="{y}" text-anchor="end" font-family="{FONT}" font-size="15" font-weight="700" fill="{TEXT}" filter="url(#glow)">{value}</text></g>'
         )
-    # anillo de "señal" que gira
+
+    # ---- curva de contribuciones por semana (abajo izquierda), se dibuja sola
+    gx, gy, gw, gh = 34, 236, 300, 56
+    peak = max(per_week) or 1
+    n = len(per_week)
+    pts = [(gx + gw * i / max(n - 1, 1), gy + gh - gh * v / peak) for i, v in enumerate(per_week)]
+    line = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    area = f"{gx},{gy + gh} " + line + f" {gx + gw},{gy + gh}"
+    length = sum(math.dist(pts[i], pts[i + 1]) for i in range(n - 1)) + 10
     parts.append(
-        f'<g transform="translate(440 160)"><circle r="46" fill="none" stroke="{VIOLET}" stroke-opacity="0.15"/>'
-        f'<circle r="46" fill="none" stroke="{CYAN}" stroke-width="2" stroke-dasharray="40 250" stroke-linecap="round">'
-        f'<animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/></circle>'
-        f'<circle r="30" fill="none" stroke="{PINK}" stroke-width="1.5" stroke-dasharray="20 170" stroke-linecap="round">'
-        f'<animateTransform attributeName="transform" type="rotate" values="360;0" dur="3s" repeatCount="indefinite"/></circle>'
-        f'<circle r="5" fill="{VIOLET}"><animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/></circle>'
-        f'<text y="72" text-anchor="middle" font-family="{FONT}" font-size="10" fill="{MUTED}" letter-spacing="2">LINK OK</text></g>'
+        f'<text x="{gx}" y="{gy - 10}" font-family="{FONT}" font-size="11" fill="{MUTED}" letter-spacing="2">WEEKLY SIGNAL · 12 MONTHS</text>'
+        f'<line x1="{gx}" y1="{gy + gh}" x2="{gx + gw}" y2="{gy + gh}" stroke="{VIOLET}" stroke-opacity="0.25"/>'
+        f'<polygon points="{area}" fill="{CYAN}" fill-opacity="0"><animate attributeName="fill-opacity" values="0;0.12" begin="2.2s" dur="1s" fill="freeze"/></polygon>'
+        f'<polyline points="{line}" fill="none" stroke="{CYAN}" stroke-width="1.8" stroke-linejoin="round" filter="url(#glow)" '
+        f'stroke-dasharray="{length:.0f}" stroke-dashoffset="{length:.0f}">'
+        f'<animate attributeName="stroke-dashoffset" values="{length:.0f};0" begin="0.8s" dur="2s" fill="freeze"/></polyline>'
+        f'<circle r="3" fill="{PINK}" filter="url(#glow)"><animateMotion dur="6s" begin="3s" repeatCount="indefinite" path="M {line.replace(" ", " L ")}"/></circle>'
     )
-    parts.append(f'<text x="530" y="74" font-family="{FONT}" font-size="11" fill="{MUTED}" letter-spacing="2">LANGUAGES</text>')
+
+    # ---- sistema de lenguajes (derecha): planetas que orbitan el núcleo
+    cx, cy = 640, 178
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="26" fill="{VIOLET}" fill-opacity="0.12" stroke="{VIOLET}" stroke-opacity="0.6">'
+        f'<animate attributeName="r" values="24;28;24" dur="4s" repeatCount="indefinite"/></circle>'
+        f'<text x="{cx}" y="{cy + 4}" text-anchor="middle" font-family="{FONT}" font-size="11" fill="{TEXT}" letter-spacing="1">CODE</text>'
+        f'<text x="{cx}" y="64" text-anchor="middle" font-family="{FONT}" font-size="11" fill="{MUTED}" letter-spacing="2">LANGUAGE SYSTEM</text>'
+    )
+    rnd = random.Random(3)
     for i, (name, (size, color)) in enumerate(top):
-        y = 96 + i * 32
         pct = size / total
-        bw = 300 * pct
-        begin = 0.6 + i * 0.2
+        rx, ry = 92 + i * 34, 38 + i * 12
+        pr = 4 + 12 * math.sqrt(pct)
+        dur = 9 + i * 5
+        start = rnd.uniform(0, 1)
+        path = f"M {cx + rx},{cy} A {rx},{ry} 0 1,1 {cx - rx},{cy} A {rx},{ry} 0 1,1 {cx + rx},{cy}"
         parts.append(
-            f'<text x="530" y="{y + 4}" font-family="{FONT}" font-size="12" fill="{TEXT}">{name}</text>'
-            f'<text x="860" y="{y + 4}" text-anchor="end" font-family="{FONT}" font-size="11" fill="{MUTED}">{pct * 100:.1f}%</text>'
-            f'<rect x="530" y="{y + 10}" width="330" height="5" rx="2.5" fill="{VIOLET}" fill-opacity="0.12"/>'
-            f'<rect x="530" y="{y + 10}" width="0" height="5" rx="2.5" fill="{color}" filter="url(#glow)">'
-            f'<animate attributeName="width" values="0;{max(bw * 330 / 300, 3):.1f}" begin="{begin:.1f}s" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" keyTimes="0;1"/></rect>'
+            f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="{color}" stroke-opacity="0.22" stroke-dasharray="2 5"/>'
+            f'<g><animateMotion dur="{dur}s" begin="-{start * dur:.1f}s" repeatCount="indefinite" path="{path}"/>'
+            f'<circle r="{pr:.1f}" fill="{color}" filter="url(#glow)"/>'
+            f'<text x="{pr + 5:.1f}" y="4" font-family="{FONT}" font-size="11" fill="{TEXT}">{name} {pct * 100:.0f}%</text></g>'
         )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="GitHub telemetry">'
-        f"{defs()}{frame(w, h, 'TELEMETRY')}{''.join(parts)}</svg>"
+        f"{defs()}{frame(w, h, 'FLIGHT TELEMETRY')}{''.join(parts)}</svg>"
     )
-
 
 # ---------------------------------------------------------------- Starfield de contribuciones
 
