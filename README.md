@@ -1,64 +1,64 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:05010f,45:1b0b3a,100:3b2a8f&text=F%C3%A9lix%20Tavera&fontColor=e8e6ff&fontSize=56&fontAlignY=38&desc=software%20%C2%B7%20IA%20%C2%B7%20f%C3%ADsica%20%C2%B7%20Linux&descAlignY=58&descSize=18&animation=twinkling" width="100%" alt="Félix Tavera"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:05010f,45:1b0b3a,100:3b2a8f&text=F%C3%A9lix%20Tavera&fontColor=e8e6ff&fontSize=56&fontAlignY=38&desc=software%20%C2%B7%20AI%20%C2%B7%20physics%20%C2%B7%20Linux&descAlignY=58&descSize=18&animation=twinkling" width="100%" alt="Félix Tavera"/>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=19&duration=3200&pause=900&color=A78BFA&center=true&vCenter=true&width=620&lines=%3E+iniciando+secuencia+de+lanzamiento...;Construyo+software+que+la+gente+usa+de+verdad;Un+punto+de+venta+que+cobra+sin+internet;Un+simulador+cu%C3%A1ntico+de+20+qubits+en+C%2B%2B;Agentes+de+IA+que+programan+y+se+revisan+solos" alt="typing"/></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=19&duration=3200&pause=900&color=A78BFA&center=true&vCenter=true&width=620&lines=%3E+initiating+launch+sequence...;I+build+software+people+actually+use;A+point+of+sale+that+sells+without+internet;A+20-qubit+quantum+simulator+in+C%2B%2B;AI+agents+that+write+and+review+their+own+code" alt="typing"/></a>
 
-[🛰️ Portafolio](https://portafolio-eight-gamma-14.vercel.app) · [🎮 Racha.gg](https://c0z1.github.io/racha.gg/) · [🈳 Kana Pad](https://c0z1.github.io/kana-pad/)
+[🛰️ Portfolio](https://portafolio-eight-gamma-14.vercel.app) · [🎮 Racha.gg](https://c0z1.github.io/racha.gg/) · [🈳 Kana Pad](https://c0z1.github.io/kana-pad/) · [💼 LinkedIn](https://www.linkedin.com/in/felix-tavera-ramirez)
 
 </div>
 
 ```text
           /\            felix@nube
          /  \           ----------------------------------
-        /\   \          OS        Arch Linux + Hyprland (tema Zeri)
+        /\   \          OS        Arch Linux + Hyprland (Zeri theme)
        /      \         Server    Ubuntu 24.04
-      /   ,,   \        Base      Monterrey, MX
-     /   |  |  -\       Escuela   Ing. Desarrollo de Software @ TecMilenio
-    /_-''    ''-_\      Misión    software real, con usuarios reales
-                        Motores   Python · TypeScript · C++ · SQL
-                        Hobbies   física, astronomía, japonés, LoL
+      /   ,,   \        Base      Monterrey, MX (UTC-6)
+     /   |  |  -\       School    Software Development Eng. @ TecMilenio
+    /_-''    ''-_\      Mission   real software, real users
+                        Engines   Python · TypeScript · C++ · SQL
+                        Hobbies   physics, astronomy, Japanese, LoL
 ```
 
-## 🚀 Bitácora de misiones
+## 🚀 Mission log
 
-> Cosas que ya despegaron y siguen en órbita.
+> Things that already launched and are still in orbit.
 
-**🛒 Punto de venta para un mini súper** · *en operación*
-El sistema con el que cobra una tienda real: 2 cajas, carnicería con báscula etiquetadora, cobro con tarjeta en terminales Mercado Pago y un panel para que las encargadas cambien precios desde el celular escaneando con la cámara. Si se cae el internet, la tienda sigue vendiendo. Migré 13,969 productos del sistema anterior y cada versión pasa una venta de punta a punta en dos cajas antes de instalarse.
+**🛒 Point of sale for a mini supermarket** · *in production*
+The system a real store checks out with: 2 registers, a butcher counter with a label-printing scale, card payments on Mercado Pago terminals, and a phone panel where managers update prices by scanning barcodes with the camera. If the internet goes down, the store keeps selling. I migrated 13,969 products from the old system, and every release passes an end-to-end sale on two registers before it ships.
 `Python` `Django` `React` `PostgreSQL` `Docker` `GitHub Actions`
 
-**⚛️ [Quantum Lab](https://github.com/C0z1/quantum-lab)** · *lo usan en TecMilenio para enseñar*
-Laboratorio cuántico de escritorio: Grover, Shor, QFT, teletransportación y más, en 3D y paso a paso. El motor es mío, en C++, hasta 20 qubits, y se valida solo contra Qiskit con error de 10⁻¹⁶. El cálculo corre en otro proceso para que el render nunca baje de 60 fps.
+**⚛️ [Quantum Lab](https://github.com/C0z1/quantum-lab)** · *used at TecMilenio to teach*
+A desktop quantum lab: Grover, Shor, QFT, teleportation and more, in 3D and step by step. The engine is mine, written in C++, up to 20 qubits, and it validates itself against Qiskit with 10⁻¹⁶ error. Computation runs in a separate process so rendering never drops below 60 fps.
 `C++20` `Eigen3` `ZeroMQ` `Electron` `Three.js` `Qiskit`
 
-**🎮 [Racha.gg](https://github.com/C0z1/racha.gg)** · *[en vivo](https://c0z1.github.io/racha.gg/)*
-Un coach de League of Legends que lee tus partidas, encuentra los errores que repites y en champ select te arma un plan de 3 reglas contra tu rival. Lo construí con un flujo de agentes de IA (uno programa, otro revisa cada commit): más de 340 commits y 42 versiones en dos semanas.
+**🎮 [Racha.gg](https://github.com/C0z1/racha.gg)** · *[live](https://c0z1.github.io/racha.gg/)*
+A League of Legends coach that reads your matches, finds the mistakes you keep repeating, and in champ select builds a 3-rule plan against your opponent. Built with an AI-agent workflow (one model codes, another reviews every commit): 340+ commits and 42 releases in two weeks.
 `Python` `Riot API` `Cloudflare Workers` `Three.js` `Claude`
 
-**🈳 [Kana Pad](https://github.com/C0z1/kana-pad)** · *[en vivo](https://c0z1.github.io/kana-pad/)*
-Japonés del N5 al N3 con mando de Xbox (vibración incluida): ~3,000 palabras, 613 kanji con trazos calificados, voces neuronales offline y repaso espaciado.
+**🈳 [Kana Pad](https://github.com/C0z1/kana-pad)** · *[live](https://c0z1.github.io/kana-pad/)*
+Japanese from N5 to N3 with an Xbox controller (vibration included): ~3,000 words, 613 kanji with graded strokes, offline neural voices and spaced repetition.
 `JavaScript` `PWA` `Tauri` `Kokoro TTS`
 
-**📉 [SteamSense](https://github.com/C0z1/steamsense-deploy)** · *[en vivo](https://steamsense-deploy-ft9x.vercel.app)*
-¿Compro el juego hoy o espero? Un modelo que lee años de historial de precios de Steam y te dice.
+**📉 [SteamSense](https://github.com/C0z1/steamsense-deploy)** · *[live](https://steamsense-deploy-ft9x.vercel.app)*
+Buy the game today or wait? A model that reads years of Steam price history and tells you.
 `FastAPI` `DuckDB` `scikit-learn` `Next.js`
 
 <details>
-<summary><b>🔭 Más señales captadas (ML, datos, web)</b></summary>
+<summary><b>🔭 More signals picked up (ML, data, web)</b></summary>
 
-- **[Me Cuido, Me Organizo](https://github.com/C0z1/Aula-Inclusiva)**: app de iPad para que niños con TDA hagan sus rutinas solos. `SwiftUI`
-- **[Scouting LCK](https://github.com/C0z1/Modelo-Scouting-LCK-Felix)**: clasifica jugadores LCK vs. Challengers con sus estadísticas. `scikit-learn`
-- **[La Nube: Gestión del Conocimiento](https://github.com/C0z1/la-nube-gestion-conocimiento)**: búsqueda semántica y ontología OWL para el mini súper.
-- **[Quantum Web](https://github.com/C0z1/quantum-web)**: Grover, teletransportación y corrección de errores Steane en el navegador.
-- **[Astronomía práctica](https://astronomia-practica.vercel.app)**: sitio didáctico de astronomía y física.
-- **[Astra](https://github.com/C0z1/Astra)**: asistente de IA personal con Spotify.
-- **[DevOps en AWS](https://github.com/C0z1/mi-repositorio-devops)**: CI/CD con Docker, CodeBuild y CodeDeploy.
-- **[Recomendador de documentos](https://github.com/C0z1/Actividad3_4)**, **[AutoAI](https://github.com/C0z1/autoai-image-classification)**, **[SteamPulse](https://github.com/C0z1/steamproyect)** y **[vinos con joblib](https://github.com/C0z1/Practica-Joblil)**.
+- **[Me Cuido, Me Organizo](https://github.com/C0z1/Aula-Inclusiva)**: iPad app that helps kids with ADHD do their routines on their own. `SwiftUI`
+- **[LCK Scouting](https://github.com/C0z1/Modelo-Scouting-LCK-Felix)**: classifies LCK vs. Challengers players from their match stats. `scikit-learn`
+- **[La Nube: Knowledge Management](https://github.com/C0z1/la-nube-gestion-conocimiento)**: semantic search and an OWL ontology for the mini supermarket.
+- **[Quantum Web](https://github.com/C0z1/quantum-web)**: Grover, teleportation and Steane error correction in the browser.
+- **[Practical Astronomy](https://astronomia-practica.vercel.app)**: a teaching site for astronomy and physics.
+- **[Astra](https://github.com/C0z1/Astra)**: personal AI assistant with Spotify integration.
+- **[DevOps on AWS](https://github.com/C0z1/mi-repositorio-devops)**: CI/CD with Docker, CodeBuild and CodeDeploy.
+- **[Document recommender](https://github.com/C0z1/Actividad3_4)**, **[AutoAI](https://github.com/C0z1/autoai-image-classification)**, **[SteamPulse](https://github.com/C0z1/steamproyect)** and **[wine classifier with joblib](https://github.com/C0z1/Practica-Joblil)**.
 
 </details>
 
-## 🛠️ Sala de máquinas
+## 🛠️ Engine room
 
 <div align="center">
 
@@ -66,25 +66,25 @@ Japonés del N5 al N3 con mando de Xbox (vibración incluida): ~3,000 palabras, 
 
 </div>
 
-## 📡 Telemetría
+## 📡 Telemetry
 
 <div align="center">
 
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=C0z1&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0b0a1f&title_color=a78bfa&icon_color=7dd3fc&count_private=true&hide_rank=true" alt="stats"/>
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=C0z1&layout=compact&theme=tokyonight&hide_border=true&bg_color=0b0a1f&title_color=a78bfa&langs_count=8" alt="lenguajes"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=C0z1&layout=compact&theme=tokyonight&hide_border=true&bg_color=0b0a1f&title_color=a78bfa&langs_count=8" alt="languages"/>
 
-<img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=C0z1&theme=tokyo-night&hide_border=true&bg_color=0b0a1f&color=a78bfa&line=7dd3fc&point=e8e6ff&area=true" alt="actividad"/>
+<img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=C0z1&theme=tokyo-night&hide_border=true&bg_color=0b0a1f&color=a78bfa&line=7dd3fc&point=e8e6ff&area=true" alt="activity"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/C0z1/C0z1/output/snake-dark.svg"/>
-  <img alt="contribuciones" src="https://raw.githubusercontent.com/C0z1/C0z1/output/snake.svg"/>
+  <img alt="contributions" src="https://raw.githubusercontent.com/C0z1/C0z1/output/snake.svg"/>
 </picture>
 
 </div>
 
 <div align="center">
 
-<sub>🌌 Si llegaste hasta aquí, ya estás en órbita. Escríbeme y hablamos de software, física o de por qué perdiste esa partida.</sub>
+<sub>🌌 If you made it this far, you're already in orbit. Open to remote internships in software, AI and data — let's talk software, physics, or why you lost that game.</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=110&section=footer&color=0:3b2a8f,55:1b0b3a,100:05010f&animation=twinkling" width="100%" alt=""/>
 
