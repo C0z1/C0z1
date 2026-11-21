@@ -69,7 +69,7 @@ Buy the game today or wait? A model that reads years of Steam price history and 
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,ts,js,cpp,django,fastapi,react,nextjs,tailwind,threejs,electron,tauri,postgres,docker,githubactions,aws,cloudflare,arch,ubuntu,linux&perline=10&theme=dark" alt="stack"/>
+<img src="https://raw.githubusercontent.com/C0z1/C0z1/output/engine-room.svg" width="100%" alt="Tech stack"/>
 
 </div>
 
@@ -79,15 +79,9 @@ Buy the game today or wait? A model that reads years of Steam price history and 
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=C0z1&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0b0a1f&title_color=a78bfa&icon_color=7dd3fc&count_private=true&hide_rank=true" alt="stats"/>
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=C0z1&layout=compact&theme=tokyonight&hide_border=true&bg_color=0b0a1f&title_color=a78bfa&langs_count=8" alt="languages"/>
+<img src="https://raw.githubusercontent.com/C0z1/C0z1/output/telemetry.svg" width="100%" alt="GitHub telemetry"/>
 
-<img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=C0z1&theme=tokyo-night&hide_border=true&bg_color=0b0a1f&color=a78bfa&line=7dd3fc&point=e8e6ff&area=true" alt="activity"/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/C0z1/C0z1/output/snake-dark.svg"/>
-  <img alt="contributions" src="https://raw.githubusercontent.com/C0z1/C0z1/output/snake.svg"/>
-</picture>
+<img src="https://raw.githubusercontent.com/C0z1/C0z1/output/starfield.svg" width="100%" alt="Contribution starfield"/>
 
 </div>
 
