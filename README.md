@@ -4,7 +4,7 @@
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=19&duration=3200&pause=900&color=A78BFA&center=true&vCenter=true&width=620&lines=%3E+iniciando+secuencia+de+lanzamiento...;Construyo+software+que+la+gente+usa+de+verdad;Un+punto+de+venta+que+cobra+sin+internet;Un+simulador+cu%C3%A1ntico+de+20+qubits+en+C%2B%2B;Agentes+de+IA+que+programan+y+se+revisan+solos" alt="typing"/></a>
 
-[🛰️ Portafolio](https://portafolio-eight-gamma-14.vercel.app) · [🎮 Racha.gg](https://c0z1.github.io/racha.gg/) · [🈳 Kana Pad](https://c0z1.github.io/kana-pad/) · [🕳️ Agujeros negros](https://space-pre.vercel.app)
+[🛰️ Portafolio](https://portafolio-eight-gamma-14.vercel.app) · [🎮 Racha.gg](https://c0z1.github.io/racha.gg/) · [🈳 Kana Pad](https://c0z1.github.io/kana-pad/)
 
 </div>
 
@@ -51,7 +51,7 @@ Japonés del N5 al N3 con mando de Xbox (vibración incluida): ~3,000 palabras, 
 - **[Scouting LCK](https://github.com/C0z1/Modelo-Scouting-LCK-Felix)**: clasifica jugadores LCK vs. Challengers con sus estadísticas. `scikit-learn`
 - **[La Nube: Gestión del Conocimiento](https://github.com/C0z1/la-nube-gestion-conocimiento)**: búsqueda semántica y ontología OWL para el mini súper.
 - **[Quantum Web](https://github.com/C0z1/quantum-web)**: Grover, teletransportación y corrección de errores Steane en el navegador.
-- **[Agujeros negros](https://space-pre.vercel.app)** y **[Astronomía práctica](https://astronomia-practica.vercel.app)**: física extrema, visualizada.
+- **[Astronomía práctica](https://astronomia-practica.vercel.app)**: sitio didáctico de astronomía y física.
 - **[Astra](https://github.com/C0z1/Astra)**: asistente de IA personal con Spotify.
 - **[DevOps en AWS](https://github.com/C0z1/mi-repositorio-devops)**: CI/CD con Docker, CodeBuild y CodeDeploy.
 - **[Recomendador de documentos](https://github.com/C0z1/Actividad3_4)**, **[AutoAI](https://github.com/C0z1/autoai-image-classification)**, **[SteamPulse](https://github.com/C0z1/steamproyect)** y **[vinos con joblib](https://github.com/C0z1/Practica-Joblil)**.
