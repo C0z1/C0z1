@@ -17,7 +17,7 @@
         /\   \          OS        Arch Linux + Hyprland (Zeri theme)
        /      \         Server    Ubuntu 24.04
       /   ,,   \        Base      Monterrey, MX (UTC-6)
-     /   |  |  -\       School    Software Development Eng. @ TecMilenio
+     /   |  |  -\       School    Software Development Eng.
     /_-''    ''-_\      Mission   real software, real users
                         Engines   Python · TypeScript · C++ · SQL
                         Hobbies   physics, astronomy, Japanese, LoL
