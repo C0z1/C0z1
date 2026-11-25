@@ -14,7 +14,7 @@
 ```text
           /\            felix@nube
          /  \           ----------------------------------
-        /\   \          OS        Arch Linux + Hyprland (Zeri theme)
+        /\   \          OS        Arch Linux + Hyprland
        /      \         Server    Ubuntu 24.04
       /   ,,   \        Base      Monterrey, MX (UTC-6)
      /   |  |  -\       School    Software Development Eng.
